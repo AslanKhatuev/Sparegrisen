@@ -73,8 +73,8 @@ export default function KuttEnVanePage() {
           gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
           gap: "1.5rem",
         }}>
-
-        {/* Vaner */}
+       
+       {/* Vaner */}
         <div>
           <div
             style={{
@@ -90,7 +90,7 @@ export default function KuttEnVanePage() {
                 fontSize: "1rem",
                 marginBottom: "1rem",
               }}>
-              Mine vaner 
+              Mine vaner
             </h2>
 
             {vaner.length === 0 && (
@@ -100,7 +100,8 @@ export default function KuttEnVanePage() {
                   fontSize: "0.9rem",
                   textAlign: "center",
                   padding: "1rem",
-                }}>
+                }}
+              >
                 Ingen vaner lagt til ennå.
               </p>
             )}
@@ -171,7 +172,20 @@ export default function KuttEnVanePage() {
                     alignItems: "center",
                     justifyContent: "center",
                   }}>
-                  </button>
+                  <svg
+                    width="16"
+                    height="16"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="#EF4444"
+                    strokeWidth={2}>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                    />
+                  </svg>
+                </button>
               </div>
             ))}
 
@@ -395,7 +409,7 @@ export default function KuttEnVanePage() {
                   fontWeight: 600,
                   marginBottom: "0.3rem",
                 }}>
-                Rentebonus 
+                Rentebonus
               </p>
               <p
                 style={{
@@ -426,7 +440,7 @@ export default function KuttEnVanePage() {
               fontSize: "clamp(1rem, 2vw, 1.1rem)",
               marginBottom: "1.2rem",
             }}>
-            Slik vokser sparingen din over {antallAar} år 
+            Slik vokser sparingen din over {antallAar} år
           </h2>
           <SpareGraf data={data} />
         </div>
