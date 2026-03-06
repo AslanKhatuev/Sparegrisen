@@ -1,0 +1,179 @@
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+
+export default function Header() {
+  const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const links = [
+    { href: "/", label: "Hjem" },
+    { href: "/rentebarometer", label: "Rentebarometer" },
+    { href: "/sparekalkulator", label: "Sparekalkulator" },
+    { href: "/kutt-en-vane", label: "Kutt en vane" },
+  ];
+
+  return (
+    <header
+      style={{
+        background: "white",
+        borderBottom: "2px solid #E5E7EB",
+        position: "sticky",
+        top: 0,
+        zIndex: 100,
+        boxShadow: "0 2px 12px rgba(27,45,35,0.06)",
+      }}>
+      <div
+        style={{
+          maxWidth: 1100,
+          margin: "0 auto",
+          padding: "0 clamp(1rem, 3vw, 1.5rem)",
+          height: 70,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}>
+        
+        {/* Logo */}
+        <Link
+          href="/"
+          style={{
+            fontWeight: 800,
+            fontSize: "clamp(1.1rem, 3vw, 1.4rem)",
+            color: "#2D6A4F",
+            textDecoration: "none",
+          }}>
+          Sparegrisen
+        </Link>
+
+        {/* Desktop nav */}
+        <nav
+          style={{
+            display: "flex",
+            gap: "0.3rem",
+            flexWrap: "wrap",
+          }}
+          className="desktop-nav">
+          {links.map(({ href, label }) => {
+            const active = pathname === href;
+            return (
+              <Link
+                key={href}
+                href={href}
+                style={{
+                  fontWeight: 600,
+                  fontSize: "0.88rem",
+                  color: active ? "#2D6A4F" : "#1B2D23",
+                  textDecoration: "none",
+                  padding: "0.4rem 0.9rem",
+                  borderRadius: 100,
+                  background: active ? "#D8F3DC" : "transparent",
+                }}>
+                {label}
+              </Link>
+            );
+          })}
+        </nav>
+
+        {/* Hamburger knapp */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="hamburger-btn"
+          style={{
+            display: "none",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: 5,
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            padding: "0.4rem",
+            borderRadius: 8,
+          }}>
+          <span
+            style={{
+              display: "block",
+              width: 24,
+              height: 2.5,
+              background: "#2D6A4F",
+              borderRadius: 2,
+              transition: "all 0.3s",
+              transform: menuOpen
+                ? "rotate(45deg) translate(5px, 5px)"
+                : "none",
+            }}/>
+          <span
+            style={{
+              display: "block",
+              width: 24,
+              height: 2.5,
+              background: "#2D6A4F",
+              borderRadius: 2,
+              transition: "all 0.3s",
+              opacity: menuOpen ? 0 : 1,
+            }}/>
+          <span
+            style={{
+              display: "block",
+              width: 24,
+              height: 2.5,
+              background: "#2D6A4F",
+              borderRadius: 2,
+              transition: "all 0.3s",
+              transform: menuOpen
+                ? "rotate(-45deg) translate(5px, -5px)"
+                : "none",
+            }}/>
+        </button>
+      </div>
+
+      {/* Mobil meny */}
+      {menuOpen && (
+        <div
+          className="mobile-menu"
+          style={{
+            background: "white",
+            borderTop: "1px solid #E5E7EB",
+            padding: "1rem clamp(1rem, 3vw, 1.5rem)",
+            display: "flex",
+            flexDirection: "column",
+            gap: "0.4rem",
+          }}>
+          {links.map(({ href, label }) => {
+            const active = pathname === href;
+            return (
+              <Link
+                key={href}
+                href={href}
+                onClick={() => setMenuOpen(false)}
+                style={{
+                  fontWeight: 600,
+                  fontSize: "1rem",
+                  color: active ? "#2D6A4F" : "#1B2D23",
+                  textDecoration: "none",
+                  padding: "0.7rem 1rem",
+                  borderRadius: 12,
+                  background: active ? "#D8F3DC" : "#F9FAF8",
+                }}>
+                {label}
+              </Link>
+            );
+          })}
+        </div>
+      )}
+
+      {/* CSS for responsiv visning */}
+      <style>{`
+  @media (max-width: 1024px) {
+    .desktop-nav { display: none !important; }
+    .hamburger-btn { display: flex !important; }
+  }
+  @media (min-width: 1025px) {
+    .mobile-menu { display: none !important; }
+  }
+`}</style>
+    </header>
+  );
+}
