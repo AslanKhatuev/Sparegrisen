@@ -18,7 +18,7 @@ npm install zustand recharts
 
 ### Forside 
 
-Oversiktsside med Hero-komponent, tre feature-kort og en personlig beskjed.
+Oversiktsside med Hero-komponent, tre feature-kort og en liten beskjed.
 
 ### Rentebarometer 
 
