@@ -46,7 +46,7 @@ Viser hva brukeren kan spare ved å kutte kostbare vaner. Brukeren kan:
 
 ## Teknologi
 
-- **Next.js 14** med App Router
+- **Next.js 16.1.6 ** med App Router
 - **React** med hooks (useState, useEffect)
 - **Tailwind CSS** og inline styles for responsivt design
 - **Zustand** med persist-middleware for persistent lagring i localStorage
@@ -58,10 +58,9 @@ Viser hva brukeren kan spare ved å kutte kostbare vaner. Brukeren kan:
 - app/sparekalkulator/page.js — Oppgave 2
 - app/kutt-en-vane/page.js — Oppgave 3
 - app/globals.css — Global styling
-- app/layout.js — Root layout med header og footer
+- app/layout.js — Root layout med header
 - app/page.js — Forside
 - components/Header.js — Navigasjon med hamburger-meny
-- components/Footer.js — Footer
 - components/Hero.js — Hero-komponent
 - components/SpareGraf.js — Gjenbrukbar grafkomponent
 - store/store.js — Zustand stores med persistent lagring
