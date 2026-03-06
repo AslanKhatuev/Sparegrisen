@@ -455,7 +455,6 @@ export default function KuttEnVanePage() {
             marginTop: "1.5rem",
           }}>
           <p style={{ fontSize: "3rem" }}></p>
-          <p>Legg til vaner for å se sparingspotensialet ditt</p>
         </div>
       )}
     </div>
