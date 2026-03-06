@@ -10,6 +10,10 @@ npm run dev
 
 Åpne [http://localhost:3000] i nettleseren.
 
+Prosjektet bruker følgende pakker:
+
+npm install zustand recharts
+
 ## Sider
 
 ### Forside 
