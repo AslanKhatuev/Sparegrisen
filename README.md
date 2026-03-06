@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sparegrisen
 
-## Getting Started
+Eksamensprojekt i webutvikling. Et nettsted om privatøkonomi og sparing.
 
-First, run the development server:
+## Kom i gang
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Åpne [http://localhost:3000] i nettleseren.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Sider
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Forside 
 
-## Learn More
+Oversiktsside med Hero-komponent, tre feature-kort og en personlig beskjed.
 
-To learn more about Next.js, take a look at the following resources:
+### Rentebarometer 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Viser en tabell med sparerenter fra ulike banker. Brukeren kan:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Endre sparebeløp og se avkastning oppdatert i sanntid
+- Sortere tabellen fra høyest til lavest rente og omvendt
+- Se beste tilbud fremhevet øverst
 
-## Deploy on Vercel
+### Sparekalkulator 
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Kalkulator for langsiktig sparing. Brukeren kan:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Legge inn månedlig beløp, årsrente og antall år
+- Se total saldo, totalt innbetalt og renteinntekter
+- Se grafisk fremstilling av sparingen over tid
+- Bruke slider for å justere antall år
+- Verdiene lagres persistent med Zustand og localStorage
+
+### Kutt en vane 
+
+Viser hva brukeren kan spare ved å kutte kostbare vaner. Brukeren kan:
+
+- Legge til og fjerne vaner med daglig kostnad
+- Redigere eksisterende vaner direkte i listen
+- Se månedlig sparebeløp beregnet automatisk
+- Se grafisk fremstilling av sparingen (gjenbruker SpareGraf fra oppgave 2)
+- Verdiene lagres persistent med Zustand og localStorage
+
+## Teknologi
+
+- **Next.js 14** med App Router
+- **React** med hooks (useState, useEffect)
+- **Tailwind CSS** og inline styles for responsivt design
+- **Zustand** med persist-middleware for persistent lagring i localStorage
+- **Recharts** for grafisk fremstilling av sparing
+
+## Mappestruktur
+
+- app/rentebarometer/page.js — Oppgave 1
+- app/sparekalkulator/page.js — Oppgave 2
+- app/kutt-en-vane/page.js — Oppgave 3
+- app/globals.css — Global styling
+- app/layout.js — Root layout med header og footer
+- app/page.js — Forside
+- components/Header.js — Navigasjon med hamburger-meny
+- components/Footer.js — Footer
+- components/Hero.js — Hero-komponent
+- components/SpareGraf.js — Gjenbrukbar grafkomponent
+- store/store.js — Zustand stores med persistent lagring
+- lib/bankerData.js — Bankdata med renter
+
+## Gjenbruk av komponenter
+
+`SpareGraf` og `beregnSparedata` brukes både i Sparekalkulator (oppgave 2) og Kutt en vane (oppgave 3).
+
+## Responsivt design
+
+Nettstedet er tilpasset alle skjermstørrelser:
+
+- **Mobil** — hamburger-meny, stablede kolonner
+- **Nettbrett (iPad/iPad Pro)** — hamburger-meny, tilpasset layout
+- **Desktop** — full navigasjon, grid-layout
+
+## Persistent lagring
+
+Zustand med `persist`-middleware lagrer automatisk alle verdier i localStorage.
+Verdiene i Sparekalkulator og Kutt en vane vil derfor ikke forsvinne ved refresh.
+
+## Kilder
+
+- Rentesatser: Veiledende tall basert på diverse banker, sist oppdatert...
+- [Next.js dokumentasjon](https://nextjs.org/docs)
+- [Zustand dokumentasjon](https://docs.pmnd.rs/zustand/getting-started/introduction)
+- [Recharts dokumentasjon](https://recharts.org/en-US/)

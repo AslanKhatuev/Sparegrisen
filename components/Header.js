@@ -26,16 +26,15 @@ export default function Header() {
       }}>
       <div
         style={{
-          maxWidth: 1100,
-          margin: "0 auto",
-          padding: "0 clamp(1rem, 3vw, 1.5rem)",
+          width: "100%",
+          padding: "0 2rem",
           height: 70,
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
+          boxSizing: "border-box",
         }}>
-        
-        {/* Logo */}
+        {/* Logo - venstre */}
         <Link
           href="/"
           style={{
@@ -43,18 +42,19 @@ export default function Header() {
             fontSize: "clamp(1.1rem, 3vw, 1.4rem)",
             color: "#2D6A4F",
             textDecoration: "none",
+            flexShrink: 0,
           }}>
           Sparegrisen
         </Link>
 
-        {/* Desktop nav */}
+        {/* Desktop nav - høyre */}
         <nav
+          className="desktop-nav"
           style={{
             display: "flex",
             gap: "0.3rem",
-            flexWrap: "wrap",
-          }}
-          className="desktop-nav">
+            marginLeft: "auto",
+          }}>
           {links.map(({ href, label }) => {
             const active = pathname === href;
             return (
@@ -76,7 +76,7 @@ export default function Header() {
           })}
         </nav>
 
-        {/* Hamburger knapp */}
+        {/* Hamburger knapp - høyre på mobil */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="hamburger-btn"
@@ -91,6 +91,7 @@ export default function Header() {
             cursor: "pointer",
             padding: "0.4rem",
             borderRadius: 8,
+            marginLeft: "auto",
           }}>
           <span
             style={{
@@ -136,7 +137,7 @@ export default function Header() {
           style={{
             background: "white",
             borderTop: "1px solid #E5E7EB",
-            padding: "1rem clamp(1rem, 3vw, 1.5rem)",
+            padding: "1rem 2rem",
             display: "flex",
             flexDirection: "column",
             gap: "0.4rem",
@@ -164,16 +165,15 @@ export default function Header() {
         </div>
       )}
 
-      {/* CSS for responsiv visning */}
       <style>{`
-  @media (max-width: 1024px) {
-    .desktop-nav { display: none !important; }
-    .hamburger-btn { display: flex !important; }
-  }
-  @media (min-width: 1025px) {
-    .mobile-menu { display: none !important; }
-  }
-`}</style>
+        @media (max-width: 1024px) {
+          .desktop-nav { display: none !important; }
+          .hamburger-btn { display: flex !important; }
+        }
+        @media (min-width: 1025px) {
+          .mobile-menu { display: none !important; }
+        }
+      `}</style>
     </header>
   );
 }

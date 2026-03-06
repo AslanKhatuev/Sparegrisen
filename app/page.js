@@ -27,7 +27,7 @@ export default function HomePage() {
             </svg>
           }
           title="Rentebarometer"
-          description="Sammenlign renter fra ulike banker og se hva du kan tjene pa sparepengene dine."
+          description="Sammenlign renter fra ulike banker og se hva du kan tjene på sparepengene dine."
           color="#2D6A4F"
           bg="#D8F3DC"/>
         <FeatureCard
@@ -47,7 +47,7 @@ export default function HomePage() {
             </svg>
           }
           title="Sparekalkulator"
-          description="Legg inn manedlig sparing, rente og antall ar - og se noyaktig hva du ender opp med."
+          description="Legg inn månedlig sparing, rente og antall år - og se nøyaktig hva du ender opp med."
           color="#B45309"
           bg="#FFF3E0"/>
         <FeatureCard
@@ -69,7 +69,7 @@ export default function HomePage() {
             </svg>
           }
           title="Kutt en vane"
-          description="Se hva du sparer hvis du bytter ut kostbare vaner med manedlig sparing pa konto."
+          description="Se hva du sparer hvis du bytter ut kostbare vaner med månedlig sparing på konto."
           color="#7B5EA7"
           bg="#F3EEF9"/>
       </div>
@@ -101,7 +101,7 @@ export default function HomePage() {
             lineHeight: 1.7,
           }}>
           Jeg lagde Sparegrisen fordi jeg tror alle fortjener en enkel oversikt
-          over pengene sine. Smasparing er undervurdert.
+          over pengene sine. Småsparing er undervurdert.
         </p>
       </div>
     </div>
