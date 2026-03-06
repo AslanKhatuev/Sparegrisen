@@ -93,3 +93,4 @@ Verdiene i Sparekalkulator og Kutt en vane vil derfor ikke forsvinne ved refresh
 - [Next.js dokumentasjon](https://nextjs.org/docs)
 - [Zustand dokumentasjon](https://docs.pmnd.rs/zustand/getting-started/introduction)
 - [Recharts dokumentasjon](https://recharts.org/en-US/)
+- [Logo henetet fra:](https://pixabay.com/vectors/piggy-bank-penny-bank-money-box-pig-146311/)

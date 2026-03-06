@@ -23,7 +23,8 @@ export default function Header() {
         top: 0,
         zIndex: 100,
         boxShadow: "0 2px 12px rgba(27,45,35,0.06)",
-      }}>
+      }}
+    >
       <div
         style={{
           width: "100%",
@@ -33,18 +34,27 @@ export default function Header() {
           alignItems: "center",
           justifyContent: "space-between",
           boxSizing: "border-box",
-        }}>
-        {/* Logo - venstre */}
+        }}
+      >
+        {/* Logo - Header */}
         <Link
           href="/"
           style={{
-            fontWeight: 800,
-            fontSize: "clamp(1.1rem, 3vw, 1.4rem)",
-            color: "#2D6A4F",
             textDecoration: "none",
             flexShrink: 0,
-          }}>
-          Sparegrisen
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <img
+            src="/sparegrisen.png"
+            alt="Sparegrisen logo"
+            style={{
+              height: 65,
+              width: "auto",
+              objectFit: "contain",
+            }}
+          />
         </Link>
 
         {/* Desktop nav - høyre */}
@@ -54,7 +64,8 @@ export default function Header() {
             display: "flex",
             gap: "0.3rem",
             marginLeft: "auto",
-          }}>
+          }}
+        >
           {links.map(({ href, label }) => {
             const active = pathname === href;
             return (
@@ -69,7 +80,8 @@ export default function Header() {
                   padding: "0.4rem 0.9rem",
                   borderRadius: 100,
                   background: active ? "#D8F3DC" : "transparent",
-                }}>
+                }}
+              >
                 {label}
               </Link>
             );
@@ -92,7 +104,8 @@ export default function Header() {
             padding: "0.4rem",
             borderRadius: 8,
             marginLeft: "auto",
-          }}>
+          }}
+        >
           <span
             style={{
               display: "block",
@@ -104,7 +117,8 @@ export default function Header() {
               transform: menuOpen
                 ? "rotate(45deg) translate(5px, 5px)"
                 : "none",
-            }}/>
+            }}
+          />
           <span
             style={{
               display: "block",
@@ -114,7 +128,8 @@ export default function Header() {
               borderRadius: 2,
               transition: "all 0.3s",
               opacity: menuOpen ? 0 : 1,
-            }}/>
+            }}
+          />
           <span
             style={{
               display: "block",
@@ -126,7 +141,8 @@ export default function Header() {
               transform: menuOpen
                 ? "rotate(-45deg) translate(5px, -5px)"
                 : "none",
-            }}/>
+            }}
+          />
         </button>
       </div>
 
@@ -141,7 +157,8 @@ export default function Header() {
             display: "flex",
             flexDirection: "column",
             gap: "0.4rem",
-          }}>
+          }}
+        >
           {links.map(({ href, label }) => {
             const active = pathname === href;
             return (
@@ -157,7 +174,8 @@ export default function Header() {
                   padding: "0.7rem 1rem",
                   borderRadius: 12,
                   background: active ? "#D8F3DC" : "#F9FAF8",
-                }}>
+                }}
+              >
                 {label}
               </Link>
             );
